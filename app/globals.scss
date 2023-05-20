@@ -7,17 +7,25 @@
   --blue: #61e4fa;
   --yellow: #f7f500;
   --text-shadow: rgb(0, 208, 255);
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', 'Cyberpunk';
 }
 
 * {
   margin: 0;
+  padding: 0;
   color: var(--blue);
 }
 
-body {
-  background-image: url('./CP-pics/background_clean.png');
-  background-size: 100vw;
+.HPMain {
+  background-image: url('../public/CP-pics/background_face.');
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 .Link {
@@ -51,6 +59,20 @@ body {
   width: 40%;
 }
 
+.LSMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  width: 40%;
+  background-image: url('../public/CP-pics/background_clean.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
 .menu {
   display: flex;
   flex-direction: column;
@@ -61,31 +83,37 @@ body {
   border: var(--yellow) 2px solid;
 }
 
-/* .menu {
-  width: 400px;
-  height: 100%;
-  display: inline-block;
-  background: repeating-linear-gradient
-      (
-        to bottom,
-        transparent 0%,
-        var(--lightcyan-scanline) 1px,
-        var(--lightcyan-scanline) 4px,
-        var(--lightcyan-scanline) 5px,
-        transparent 0.5%
-      ),
+.smenu {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  margin: 5%;
+  width: 20%;
+  align-items: left;
+  border: var(--yellow) 2px solid;
+
+  background: repeating-linear-gradient(
+      to bottom,
+      transparent 0%,
+      var(--red-scanline) 1px,
+      var(--red-scanline) 4px,
+      var(--red-scanline) 5px,
+      transparent 0.5%
+    ),
     repeating-linear-gradient(
       to left,
       var(--black-hover-background-scanline),
       var(--black-scanline) 100%
     );
-} */
+}
 
 .menu h1 {
   font-size: 2rem;
   font-weight: 700;
   padding: 5px;
-  font-family: var(--font-mono);
+  font-family: Cyberpunk;
+  font-size: 2.5rem;
   color: var(--blue);
 }
 
@@ -115,6 +143,7 @@ body {
   border-style: solid;
   border-width: 2px;
   border-color: transparent;
+
   /* Animation */
   transition: color 1s ease-out;
   transition: border-color 1s ease-out;
