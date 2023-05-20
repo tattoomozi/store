@@ -30,13 +30,13 @@ const rsExhibits = [
 ];
 export default function RaritiesPage() {
   return (
-    <main className="RSMain">
-      <h2>Samurai Rarities</h2>
-      <h3>Unique yet Unexpensive</h3>
+    <main className="rsMain">
+      <h1>Samurai Rarities</h1>
+      <h2>Unique yet Unexpensive</h2>
       {rsExhibits.map((exhibit) => {
         return (
           <a
-            data-test={`product-${exhibit.id}`}
+            data-test-id={`product-${exhibit.id}`}
             key={`Exhibit-div-${exhibit.id}`}
           >
             {exhibit.name};

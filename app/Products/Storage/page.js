@@ -23,13 +23,13 @@ const stExhibits = [
 
 export default function StoragePage() {
   return (
-    <main className="STMain">
-      <h2>Samurai Storage</h2>
-      <h3>Collectors Edition</h3>
+    <main className="stMain">
+      <h1>Samurai Storage</h1>
+      <h2>Collectors Edition</h2>
       {stExhibits.map((exhibit) => {
         return (
           <a
-            data-test={`product-${exhibit.id}`}
+            data-tes-id={`product-${exhibit.id}`}
             key={`Exhibit-div-${exhibit.id}`}
           >
             {exhibit.name};

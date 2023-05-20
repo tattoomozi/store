@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
 const lsExhibits = [
   {
     id: 1,
@@ -31,13 +34,13 @@ const lsExhibits = [
 
 export default function LivestockPage() {
   return (
-    <main className="LSMain">
-      <h2>Samurai Livestock</h2>
-      <h3>something to eat - something to fight</h3>
+    <main className="lsMain">
+      <h1>Samurai Livestock</h1>
+      <h2>something to eat - something to fight</h2>
       {lsExhibits.map((exhibit) => {
         return (
           <a
-            data-test={`product-${exhibit.id}`}
+            data-test-id={`product-${exhibit.id}`}
             key={`Exhibit-div-${exhibit.id}`}
           >
             {exhibit.name};

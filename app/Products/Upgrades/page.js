@@ -27,16 +27,24 @@ const ugExhibits = [
     img: '/CP-pics/virtual_skin_implants.png',
     alt: 'Hyper-Realistic Skin',
   },
+  {
+    id: 4,
+    name: 'Implant-4',
+    type: 'body-Armor',
+    price: 9000,
+    img: '/CP-pics/body_Armor.png',
+    alt: 'Nano Body Armor',
+  },
 ];
 export default function UpgradesPage() {
   return (
-    <main className="UGMain">
-      <h2>Samurai Livestock</h2>
-      <h3>something to eat - something to fight</h3>
+    <main className="ugMain">
+      <h1>Samurai Upgrades</h1>
+      <h2>Bigger - Better - Stronger</h2>
       {ugExhibits.map((exhibit) => {
         return (
           <a
-            data-test={`product-${exhibit.id}`}
+            data-test-id={`product-${exhibit.id}`}
             key={`Exhibit-div-${exhibit.id}`}
           >
             {exhibit.name};

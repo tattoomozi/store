@@ -17,10 +17,10 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <nav className="navigationbar">
           <Link href="/">Home</Link>
-          <Link href="/Livestock">Livestock</Link>
-          <Link href="/Rarities">Rarities</Link>
-          <Link href="/Upgrades">Upgrades</Link>
-          <Link href="/Storage">Storage</Link>
+          <Link href="Products/Livestock">Livestock</Link>
+          <Link href="Products/Rarities">Rarities</Link>
+          <Link href="Products/Upgrades">Upgrades</Link>
+          <Link href="Products/Storage">Storage</Link>
           <Link href="/Cart">Cart</Link>
         </nav>
         {children}
