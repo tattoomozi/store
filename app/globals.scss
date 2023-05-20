@@ -7,11 +7,6 @@
   --blue: #61e4fa;
   --yellow: #f7f500;
   --text-shadow: rgb(0, 208, 255);
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', 'Cyberpunk';
 }
 
 * {
@@ -19,22 +14,38 @@
   padding: 0;
   color: var(--blue);
 }
-
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  width: 40%;
+}
 .HPMain {
-  background-image: url('../public/CP-pics/background_face.');
+  background-image: url('/CP-pics/background_clean.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
 }
-
-.Link {
-  color: var(--red-glow);
-  display: flex;
-  text-decoration: none;
-  padding: 1rem 2rem 2rem 2rem;
-  border: 1px solid var(--yellow);
-  margin: 10px;
+.LSMain {
+  background-image: url('/CP-pics/background_face.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.RSMain {
+  background-image: url('/CP-pics/background_rarities.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.UGMain {
+  background-image: url('/CP-pics/background_upgrades.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.STMain {
+  background-image: url('/CP-pics/background_yellow.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .navigationbar {
@@ -49,16 +60,6 @@
 }
 
 // style for homepage = landing page
-
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  width: 40%;
-}
-
 .LSMain {
   display: flex;
   flex-direction: column;
@@ -81,31 +82,6 @@
   width: 20%;
   align-items: left;
   border: var(--yellow) 2px solid;
-}
-
-.smenu {
-  float: right;
-  display: flex;
-  flex-direction: column;
-  padding: 2%;
-  margin: 5%;
-  width: 20%;
-  align-items: left;
-  border: var(--yellow) 2px solid;
-
-  background: repeating-linear-gradient(
-      to bottom,
-      transparent 0%,
-      var(--red-scanline) 1px,
-      var(--red-scanline) 4px,
-      var(--red-scanline) 5px,
-      transparent 0.5%
-    ),
-    repeating-linear-gradient(
-      to left,
-      var(--black-hover-background-scanline),
-      var(--black-scanline) 100%
-    );
 }
 
 .menu h1 {

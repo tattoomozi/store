@@ -1,50 +1,52 @@
-const exhibits = [
+const rsExhibits = [
   {
-    id: 4,
+    id: 1,
     name: 'Rarity-1',
     type: 'Car',
     price: 3500,
-    /*   img: './CP-pics/future_car_front.png', img: './CP-pics/future_car_back.png', */
+    img: '/CP-pics/future_car_front.png',
     alt: 'Silverado 2077 Design',
     width: '500',
     height: '500',
   },
   {
-    id: 5,
+    id: 2,
     name: 'Rarity-2',
-    type: 'Gun',
+    type: 'Car',
     price: 6500,
-    /* img: './CP-pics/Pokemon_Cage_Steam.png', */
-    alt: 'Plasma Gun',
+    img: '/CP-pics/future_car_back.png',
+    alt: 'CyberCar 2077 Design',
     width: '500',
     height: '500',
   },
   {
-    id: 6,
+    id: 3,
     name: 'Rarity-3',
-    type: 'Armor',
+    type: 'Humanoid Bot',
     price: 9000,
-    /*  img: './CP-pics/Pokemon_Cage.png', */
-    alt: 'Nono-Tech Armor',
+    img: '/CP-pics/cyborg_slave.png',
+    alt: 'Cyborg Slave',
   },
 ];
 export default function RaritiesPage() {
   return (
-    <main>
+    <main className="RSMain">
       <h2>Samurai Rarities</h2>
-      <h3>Stuff you only find in your dreams</h3>
-      <br></br>
-      {exhibits.map((exhibit) => {
+      <h3>Unique yet Unexpensive</h3>
+      {rsExhibits.map((exhibit) => {
         return (
-          <div key={`Exhibit-div-${exhibit.id}`}>
-            {exhibit.name};<br></br>
+          <a
+            data-test={`product-${exhibit.id}`}
+            key={`Exhibit-div-${exhibit.id}`}
+          >
+            {exhibit.name};
             <img
-              src={`/CP-pics/${exhibit.name}.png`}
+              src={exhibit.img}
               width={300}
               height={300}
               alt="Enslaved Exhibit"
             />
-          </div>
+          </a>
         );
       })}
     </main>

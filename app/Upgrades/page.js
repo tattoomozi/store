@@ -1,50 +1,52 @@
-const exhibits = [
+const ugExhibits = [
   {
-    id: 7,
+    id: 1,
     name: 'Implant-1',
     type: 'arm',
     price: 3500,
-    /*   img: './CP-pics/Arm_implants.png', */
+    img: '/CP-pics/Arm_implants.png',
     alt: 'Biomechanical Arm',
     width: '500',
     height: '500',
   },
   {
-    id: 8,
+    id: 2,
     name: 'Implant-2',
     type: 'face',
     price: 6500,
-    /* img: './CP-pics/face_implants.png', */
+    img: '/CP-pics/face_implants.png',
     alt: 'Ultra-Realistic Face',
     width: '500',
     height: '500',
   },
   {
-    id: 9,
+    id: 3,
     name: 'Implant-3',
     type: 'skin',
     price: 9000,
-    /*  img: './CP-pics/virtual_skin_implants.png', */
+    img: '/CP-pics/virtual_skin_implants.png',
     alt: 'Hyper-Realistic Skin',
   },
 ];
 export default function UpgradesPage() {
   return (
-    <main>
-      <h2>Samurai Upgrades</h2>
-      <h3>Only the best on the Night-Market</h3>
-      <br></br>
-      {exhibits.map((exhibit) => {
+    <main className="UGMain">
+      <h2>Samurai Livestock</h2>
+      <h3>something to eat - something to fight</h3>
+      {ugExhibits.map((exhibit) => {
         return (
-          <div key={`Exhibit-div-${exhibit.id}`}>
-            {exhibit.name};<br></br>
+          <a
+            data-test={`product-${exhibit.id}`}
+            key={`Exhibit-div-${exhibit.id}`}
+          >
+            {exhibit.name};
             <img
-              src={`/CP-pics/${exhibit.name}.png`}
+              src={exhibit.img}
               width={300}
               height={300}
               alt="Enslaved Exhibit"
             />
-          </div>
+          </a>
         );
       })}
     </main>
