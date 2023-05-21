@@ -14,19 +14,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <header className={inter.className} data-test-id="Livestock">
+      <header className={inter.className}>
         <nav className="navigationbar">
           <Link href="/">Home</Link>
-          <Link href="Products/Livestock">Livestock</Link>
+          <Link href="Products/Livestock" data-test-id="products-link">
+            Livestock
+          </Link>
           <Link href="Products/Rarities">Rarities</Link>
           <Link href="Products/Upgrades">Upgrades</Link>
           <Link href="Products/Storage">Storage</Link>
-          <Link href="/Cart">Cart</Link>
+          <Link href="Products/Cart">Cart</Link>
         </nav>
         {children}
       </header>
-      <body></body>
-      <footer></footer>
     </html>
   );
 }

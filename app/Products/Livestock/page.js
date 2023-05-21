@@ -1,32 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { lsExhibits } from '../../../database/finalExhibits';
 
-const lsExhibits = [
-  {
-    id: 1,
-    name: 'Exhibit-1',
-    type: 'Pokemon',
-    price: 3500,
-    img: '/CP-pics/Pikachu_Cage_Steam.png',
-    alt: 'Enslaved Exhibit',
-  },
-  {
-    id: 2,
-    name: 'Exhibit-2',
-    type: 'Pokemon',
-    price: 6500,
-    img: '/CP-pics/Pokemon_Cage_Steam.png',
-    alt: 'Enslaved Exhibit',
-  },
-  {
-    id: 3,
-    name: 'Exhibit-3',
-    type: 'Pokemon',
-    price: 9000,
-    img: '/CP-pics/Pokemon_Cage.png',
-    alt: 'Enslaved Exhibit',
-  },
-];
 export default function LivestockPage() {
   return (
     <main className="lsMain">
@@ -34,7 +9,7 @@ export default function LivestockPage() {
       <h2>something to eat - something to fight</h2>
       {lsExhibits.map((exhibit) => {
         return (
-          <a key={`Exhibit-div-${exhibit.id}`}>
+          <div key={`Exhibit-div-${exhibit.id}`}>
             <Link
               href={'/Livestock/${exhibit.id}'}
               data-test-id={`product-${exhibit.id}`}
@@ -47,7 +22,7 @@ export default function LivestockPage() {
                 alt="Enslaved Exhibit"
               />
             </Link>
-          </a>
+          </div>
         );
       })}
     </main>

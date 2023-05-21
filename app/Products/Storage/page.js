@@ -1,24 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
-const stExhibits = [
-  {
-    id: 1,
-    name: 'Storage-1',
-    type: 'Humanoid Bot',
-    price: 3500,
-    img: '/CP-pics/cyborg_slave_alt.png',
-    alt: 'Broken Cyborg Slave',
-  },
-  {
-    id: 2,
-    name: 'Storage-2',
-    type: 'Humanoid Bot',
-    price: 3500,
-    img: '/CP-pics/cyborg_slave_alt_2.png',
-    alt: 'Broken Cyborg Slave',
-  },
-];
+import { stExhibits } from '../../../database/finalExhibits';
 
 export default function StoragePage() {
   return (
