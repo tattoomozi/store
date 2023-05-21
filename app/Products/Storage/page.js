@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
 const stExhibits = [
   {
     id: 1,
@@ -6,8 +9,6 @@ const stExhibits = [
     price: 3500,
     img: '/CP-pics/cyborg_slave_alt.png',
     alt: 'Broken Cyborg Slave',
-    width: '500',
-    height: '500',
   },
   {
     id: 2,
@@ -16,29 +17,29 @@ const stExhibits = [
     price: 3500,
     img: '/CP-pics/cyborg_slave_alt_2.png',
     alt: 'Broken Cyborg Slave',
-    width: '500',
-    height: '500',
   },
 ];
 
 export default function StoragePage() {
   return (
     <main className="stMain">
-      <h1>Samurai Storage</h1>
+      <h1 class="cyberpunk">Samurai Storage</h1>
       <h2>Collectors Edition</h2>
       {stExhibits.map((exhibit) => {
         return (
-          <a
-            data-tes-id={`product-${exhibit.id}`}
-            key={`Exhibit-div-${exhibit.id}`}
-          >
-            {exhibit.name};
-            <img
-              src={exhibit.img}
-              width={300}
-              height={300}
-              alt="Stored Valuables"
-            />
+          <a key={`Exhibit-div-${exhibit.id}`}>
+            <Link
+              href={'/Storage/${exhibit.id}'}
+              data-test-id={`product-${exhibit.id}`}
+            >
+              {exhibit.name};
+              <Image
+                src={exhibit.img}
+                width={200}
+                height={200}
+                alt="Stored Valuables"
+              />
+            </Link>
           </a>
         );
       })}

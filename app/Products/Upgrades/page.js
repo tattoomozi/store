@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
 const ugExhibits = [
   {
     id: 1,
@@ -6,8 +9,6 @@ const ugExhibits = [
     price: 3500,
     img: '/CP-pics/Arm_implants.png',
     alt: 'Biomechanical Arm',
-    width: '500',
-    height: '500',
   },
   {
     id: 2,
@@ -16,8 +17,6 @@ const ugExhibits = [
     price: 6500,
     img: '/CP-pics/face_implants.png',
     alt: 'Ultra-Realistic Face',
-    width: '500',
-    height: '500',
   },
   {
     id: 3,
@@ -39,21 +38,23 @@ const ugExhibits = [
 export default function UpgradesPage() {
   return (
     <main className="ugMain">
-      <h1>Samurai Upgrades</h1>
+      <h1 class="cyberpunk">Samurai Upgrades</h1>
       <h2>Bigger - Better - Stronger</h2>
       {ugExhibits.map((exhibit) => {
         return (
-          <a
-            data-test-id={`product-${exhibit.id}`}
-            key={`Exhibit-div-${exhibit.id}`}
-          >
-            {exhibit.name};
-            <img
-              src={exhibit.img}
-              width={300}
-              height={300}
-              alt="Enslaved Exhibit"
-            />
+          <a key={`Exhibit-div-${exhibit.id}`}>
+            <Link
+              href={'/Upgrades/${exhibit.id}'}
+              data-test-id={`product-${exhibit.id}`}
+            >
+              {exhibit.name};
+              <Image
+                src={exhibit.img}
+                width={200}
+                height={200}
+                alt="Enslaved Exhibit"
+              />
+            </Link>
           </a>
         );
       })}

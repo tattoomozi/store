@@ -35,7 +35,7 @@
 }
 .hpMain {
   background-image: url('/CP-pics/background_clean.png');
-  background-size: 100% 100vh;
+  background-size: contain;
   background-repeat: no-repeat;
   background-attachment: fixed;
   display: flex;
@@ -43,27 +43,35 @@
 }
 .lsMain {
   background-image: url('/CP-pics/background_face.jpg');
-  background-size: 100% 100vh;
+  background-size: contain;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  display: flex;
+  justify-content: left;
 }
 .rsMain {
   background-image: url('/CP-pics/background_rarities.jpeg');
-  background-size: 100% 100vh;
+  background-size: contain;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  display: flex;
+  justify-content: left;
 }
 .ugMain {
   background-image: url('/CP-pics/background_upgrades.jpeg');
-  background-size: 100% 100vh;
+  background-size: contain;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  display: flex;
+  justify-content: left;
 }
 .stMain {
   background-image: url('/CP-pics/background_yellow.jpg');
-  background-size: 100% 100vh;
+  background-size: contain;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  display: flex;
+  justify-content: left;
 }
 .navigationbar {
   display: flex;

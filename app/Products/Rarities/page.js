@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
 const rsExhibits = [
   {
     id: 1,
@@ -6,8 +9,6 @@ const rsExhibits = [
     price: 3500,
     img: '/CP-pics/future_car_front.png',
     alt: 'Silverado 2077 Design',
-    width: '500',
-    height: '500',
   },
   {
     id: 2,
@@ -16,8 +17,6 @@ const rsExhibits = [
     price: 6500,
     img: '/CP-pics/future_car_back.png',
     alt: 'CyberCar 2077 Design',
-    width: '500',
-    height: '500',
   },
   {
     id: 3,
@@ -31,21 +30,23 @@ const rsExhibits = [
 export default function RaritiesPage() {
   return (
     <main className="rsMain">
-      <h1>Samurai Rarities</h1>
+      <h1 class="cyberpunk">Samurai Rarities</h1>
       <h2>Unique yet Unexpensive</h2>
       {rsExhibits.map((exhibit) => {
         return (
-          <a
-            data-test-id={`product-${exhibit.id}`}
-            key={`Exhibit-div-${exhibit.id}`}
-          >
-            {exhibit.name};
-            <img
-              src={exhibit.img}
-              width={300}
-              height={300}
-              alt="Enslaved Exhibit"
-            />
+          <a key={`Exhibit-div-${exhibit.id}`}>
+            <Link
+              href={'/Rarities/${exhibit.id}'}
+              data-test-id={`product-${exhibit.id}`}
+            >
+              {exhibit.name};
+              <Image
+                src={exhibit.img}
+                width={200}
+                height={200}
+                alt="Rare goods"
+              />
+            </Link>
           </a>
         );
       })}

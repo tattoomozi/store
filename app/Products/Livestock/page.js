@@ -9,8 +9,6 @@ const lsExhibits = [
     price: 3500,
     img: '/CP-pics/Pikachu_Cage_Steam.png',
     alt: 'Enslaved Exhibit',
-    width: '500',
-    height: '500',
   },
   {
     id: 2,
@@ -19,8 +17,6 @@ const lsExhibits = [
     price: 6500,
     img: '/CP-pics/Pokemon_Cage_Steam.png',
     alt: 'Enslaved Exhibit',
-    width: '500',
-    height: '500',
   },
   {
     id: 3,
@@ -31,25 +27,26 @@ const lsExhibits = [
     alt: 'Enslaved Exhibit',
   },
 ];
-
 export default function LivestockPage() {
   return (
     <main className="lsMain">
-      <h1>Samurai Livestock</h1>
+      <h1 class="cyberpunk">Samurai Livestock</h1>
       <h2>something to eat - something to fight</h2>
       {lsExhibits.map((exhibit) => {
         return (
-          <a
-            data-test-id={`product-${exhibit.id}`}
-            key={`Exhibit-div-${exhibit.id}`}
-          >
-            {exhibit.name};
-            <img
-              src={exhibit.img}
-              width={300}
-              height={300}
-              alt="Enslaved Exhibit"
-            />
+          <a key={`Exhibit-div-${exhibit.id}`}>
+            <Link
+              href={'/Livestock/${exhibit.id}'}
+              data-test-id={`product-${exhibit.id}`}
+            >
+              {exhibit.name};
+              <Image
+                src={exhibit.img}
+                width={200}
+                height={200}
+                alt="Enslaved Exhibit"
+              />
+            </Link>
           </a>
         );
       })}
